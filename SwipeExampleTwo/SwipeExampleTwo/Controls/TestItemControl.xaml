@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Name="testItem"
+             x:Class="SwipeExampleTwo.Controls.TestItemControl">
+    <ContentView.Content>
+        <StackLayout>
+            <Label Text="{Binding TestItem.Name, Source={x:Reference testItem}}" 
+                   FontSize="30"
+                   HorizontalTextAlignment="Center"
+                   HeightRequest="40"/>
+        </StackLayout>
+
+    </ContentView.Content>
+
+    <ContentView.GestureRecognizers>
+        <TapGestureRecognizer Command="{Binding Command, Source={x:Reference testItem}}" 
+                              CommandParameter="{Binding CommandParameter, Source={x:Reference testItem}}" />
+    </ContentView.GestureRecognizers>
+</ContentView>

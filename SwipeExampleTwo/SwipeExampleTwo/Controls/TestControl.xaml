@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Name="testControl"
+             xmlns:Controls="clr-namespace:SwipeExampleTwo.Controls"
+             x:Class="SwipeExampleTwo.Controls.TestControl">
+  <ContentView.Content>
+        <StackLayout>
+            <StackLayout Orientation="Vertical"
+                     BindableLayout.ItemsSource="{Binding Items}">
+
+                <BindableLayout.ItemTemplate>
+                    <DataTemplate>
+                        <SwipeView>
+                            <SwipeView.RightItems>
+                                <SwipeItems>
+                                    <SwipeItemView>
+                                        <StackLayout>
+                                            <Button Text="Delete"/>
+                                        </StackLayout>
+                                    </SwipeItemView>
+                                </SwipeItems>
+                            </SwipeView.RightItems>
+                            <StackLayout>
+                                <Controls:TestItemControl TestItem="{Binding}"/>
+                            </StackLayout>
+                        </SwipeView>
+                    </DataTemplate>
+                </BindableLayout.ItemTemplate>
+
+            </StackLayout>
+        </StackLayout>
+    </ContentView.Content>
+</ContentView>
